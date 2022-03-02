@@ -10,6 +10,9 @@ import (
 
 func main() {
 	k := krogo.New()
+	
+	// ValidateHeaders is used to decide if we need to enforce v3 headers and headers configured using VALIDATE_HEADERS
+	// Making this false will disable this check. By default it is set to true.
 	k.Server.ValidateHeaders = false
 
 	store := carStore.New()
