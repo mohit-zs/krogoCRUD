@@ -19,9 +19,6 @@ func main() {
 	s := carService.New(store)
 	h := handler.New(s)
 
-	err := k.DB().Ping()
-	fmt.Println(err)
-
 	k.GET("/cars", h.Get)
 	k.GET("/cars/{id}", h.GetByID)
 	k.POST("/cars", h.Create)
